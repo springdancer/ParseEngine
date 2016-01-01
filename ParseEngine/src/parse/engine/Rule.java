@@ -12,13 +12,14 @@ import java.util.LinkedList;
  * @author Administrator
  */
 public class Rule {
+
     VarTer lefSide;
-    LinkedList<VarTer> rightSide=new LinkedList<VarTer>();
-    public Rule(VarTer left,VarTer... rightinput){
-        this.lefSide=left;
-        for(int i=0;i<rightinput.length;i++){
-           rightSide.add(rightinput[i]);
+    LinkedList<VarTer> rightSide = new LinkedList<VarTer>();
+
+    public Rule(VarTer left, VarTer... rightinput) {
+        this.lefSide = left;
+        for (int i = 0; i < rightinput.length; i++) {
+            rightSide.add(rightinput[i]);
         }
     }
 }
-

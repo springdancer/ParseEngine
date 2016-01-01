@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//package parseengine;
+package parse.engine;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.LinkedList;
 
 /**
@@ -46,22 +47,6 @@ public class Engine {
             terminals.add(item);
         } else {
             variables.add(item);
-        }
-    }
-
-    public void MoveMent() {
-        VarTer current = variables.get(0);
-        input.addFirst(current);
-        VarTer myTer = terminals.get(2);
-        while (t != "$") {
-            current = input.getFirst();
-            if (current == myTer) {
-                //checked and next ter from variable;
-            }
-            if (parsTable[variables.indexOf(current)][terminals.indexOf(myTerm)] != null) {
-                input.addAll(0, parsTable[variables.indexOf(current)][terminals.indexOf(myTerm)]);
-            }
-
         }
     }
 
@@ -124,6 +109,21 @@ public class Engine {
             return;
         }
         parsTable[varInex][terIndex] = myRule;
+    }
+     public void MoveMent() {
+        VarTer current = variables.get(0);
+        input.addFirst(current);
+        VarTer myTer = terminals.get(2);
+        while (true) {
+            current = input.getFirst();
+            if (current == myTer) {
+                //checked and next ter from variable;
+            }
+            if (parsTable[variables.indexOf(current)][terminals.indexOf(myTer)] != null) {
+                input.addAll(0, parsTable[variables.indexOf(current)][terminals.indexOf(myTer)].getRightSide());
+            }
+
+        }
     }
 
 }

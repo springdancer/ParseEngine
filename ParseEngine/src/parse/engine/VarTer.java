@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//package parseengine;
+package parse.engine;
 
 /**
  *
  * @author Administrator
  */
-
 public class VarTer {
+
+    private String str;
+    private Tokentypes tType;
 
     /**
      * @return the str
@@ -39,14 +41,13 @@ public class VarTer {
     public void settType(Tokentypes tType) {
         this.tType = tType;
     }
-   public  enum Tokentypes{
-    variable,terminal
-}
-    private String str;
-    private Tokentypes tType;
-    public  VarTer(String str,Tokentypes tokenType){
-        this.str=str;
-        this.tType=tokenType;
-       }
+
+    public enum Tokentypes {
+        variable, terminal
     }
 
+    public VarTer(String str, Tokentypes tokenType) {
+        this.str = str;
+        this.tType = tokenType;
+    }
+}

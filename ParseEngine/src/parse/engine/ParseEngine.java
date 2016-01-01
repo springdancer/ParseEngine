@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//package parseengine;
+package parse.engine;
 
 /**
  *
@@ -14,10 +14,9 @@ public class ParseEngine {
     /**
      * @param args the command line arguments
      */
-    
     public static void main(String[] args) {
         //VarTer b=new VarTer("s",);
         // TODO code application logic here
     }
-    
+
 }
